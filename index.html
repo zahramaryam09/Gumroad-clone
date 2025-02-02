@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gumroad Clone by mrym</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+</head>
+<body>
+    <section class="head flex justify-between flex-col" >
+        <div id="nav-bar" class="fixed top-0 left-0 right-0 z-50 h-20 w-full justify-between border-b border-black bg-white flex">
+            <div id="logo" class="logo h-[78] pt-6 w-[228.35] p-3 ml-4 flex justify-center justify-around items-center">
+                <img class="w-[228.35px] h-auto object-contain pb-6 mt-4" src="imgs\gumroad-logo.png" alt="GUMROAd">
+            </div>
+
+            <div id="maj-nav-sec" class="override hidden lg:flex lg:items-center lg:justify-center lg:gap-4 h-[78px] w-[606px] absolute left-[46%] transform -translate-x-1/2">
+                <div class="flex flex-col items-center justify-center lg:flex-row lg:gap-4 lg:px-8 lg:h-[45px] lg:w-[571px]">
+                    <a href="#" class="flex w-full items-center justify-center border border-black lg:border-black lg:bg-black lg:text-white bg-black p-4 text-lg text-white no-underline hover:border-black lg:w-auto lg:rounded-full lg:px-4 lg:py-2 lg:h-[45px] text-xl">Home</a>
+                    <a href="#" class="flex w-full items-center justify-center border border-transparent text-xl hover:border hover:border-black hover:rounded-full pt-2 pb-2">About</a>
+                    <a href="#" class="flex w-full items-center justify-center border border-transparent text-xl hover:border hover:border-black hover:rounded-full pt-2 pb-2">Features</a>
+                    <a href="#" class="flex w-full items-center justify-center border border-transparent text-xl hover:border hover:border-black hover:rounded-full pt-2 pb-2">Pricing</a>
+                    <a href="#" class="flex w-full items-center justify-center border border-transparent text-xl hover:border hover:border-black hover:rounded-full pt-2 pb-2">Taxes</a>
+                </div>
+            </div>
+
+            <div id="header-btns" class="override hidden lg:flex h-[79px] w-[342px]">
+                <div class="flex flex-col lg:flex-row h-[79px] w-[342px] left-[76%] right=0  lg:border-black">
+                    <a href="" id="first-btn" class="flex justify-center items-center border-l border-black bg-white text-black text-xl hover:bg-pink p-4 w-[40%] h-full">Log In</a>
+                    <a href="" id="first-btn" class="flex justify-center items-center border-l border-black bg-black text-white text-xl hover:bg-pink p-4 w-[60%] h-full">Start Selling</a>
+                </div>
+            </div>
+            
+
+            <div class="flex items-center lg:hidden h-[30] w-[79.3] mr-2">
+                <button class="relative flex h-8 w-8 flex-col items-center mr-3 justify-center focus:outline-none">
+                    <div id="top-ham" class="flex mb-1 bg-black w-7 h-0.5 origin-center "></div>
+                    <div id="bott-ham" class="flex mt-1 bg-black w-7 h-0.5 origin-center "></div>
+                </button>
+            </div>
+        </div>
+
+        <div class="hero flex justify-center items-center h-[112px] lg:h-[168px] w-auto bg-[#fafaf5] border-b border-black flex-col">
+            <div class="hero-actions w-full flex flex-row items-center top-0 px-4 lg:w-[90%]">
+                <div class="flex items-center border border-black px-3 h-[46.4px] w-[calc(100%-60px)] lg:w-full bg-white rounded-md lg:relative lg:top-[-05px]">
+                    <i class="ri-search-line text-gray-400"></i>
+                    <input type="text" id="search_bar" class="w-full px-2 focus:outline-none" placeholder="Search Products">
+                </div>
+                <button class="menu-btn flex justify-center items-center bg-white w-[49px] h-[47px] border border-black rounded-sm ml-2 lg:hidden">
+                    <i class="ri-menu-5-line w-[16px] h-[22px]"></i>
+                </button>
+            </div>
+            <div class="override hidden flex menu-items lg:flex justify-center flex-row gap-2 pt-2 space-x-1">
+                <a href="" class="flex text-black p-2 px-4 font-medium bg-white border border-black rounded-full">All</a>
+                <a href="" class="flex text-black p-2 px-4 font-medium  hover:bg-white 
+                hover:border hover:border-black hover:rounded-full 
+                hover:-translate-y-1 hover:-translate-x-1 transition hover-bold-br">Drawing & Painting</a>
+                <a href="" class="flex text-black p-2  px-4 font-medium hover:bg-white 
+                hover:border hover:border-black hover:rounded-full 
+                hover:-translate-y-1 hover:-translate-x-1 transition hover-bold-br">Design</a>
+                <a href="" class="flex text-black p-2  px-4 font-medium hover:bg-white 
+                hover:border hover:border-black hover:rounded-full 
+                hover:-translate-y-1 hover:-translate-x-1 transition hover-bold-br">3D</a>
+                <a href="" class="flex text-black p-2  px-4 font-medium hover:bg-white 
+                hover:border hover:border-black hover:rounded-full 
+                hover:-translate-y-1 hover:-translate-x-1 transition hover-bold-br">Self Improvement</a>
+                <a href="" class="flex text-black p-2  px-4 font-medium hover:bg-white 
+                hover:border hover:border-black hover:rounded-full 
+                hover:-translate-y-1 hover:-translate-x-1 transition hover-bold-br">Music & Sound Design</a>
+                <a href="" class="flex text-black p-2  px-4 font-medium hover:bg-white 
+                hover:border hover:border-black hover:rounded-full 
+                hover:-translate-y-1 hover:-translate-x-1 transition hover-bold-br">Films</a>
+                <a href="" class="flex text-black p-2  px-4 font-medium hover:bg-white 
+                hover:border hover:border-black hover:rounded-full 
+                hover:-translate-y-1 hover:-translate-x-1 transition hover-bold-br">Software Development</a>
+                <a href="" class="flex text-black p-2  px-4 font-medium hover:bg-white 
+                hover:border hover:border-black hover:rounded-full 
+                hover:-translate-y-1 hover:-translate-x-1 transition hover-bold-br">More</a>
+            </div>
+        </div>
+    </section>
+     
+    <!--************crousel*********-->
+    <section class="second bg-[#fafaf5] flex flex-col">
+        <div class="img-crousal flex flex-col w-[97%]">
+            <div class="crousal-heading flex justify-between flex-row pt-2 px-4 w-full  ">
+                <h1 class="text-black text-2xl font-medium justify-start mt-2 ml-4">Featured Products</h1>
+                <div class="flex flex-row items-center mr-4">
+                    <i class="ri-arrow-left-long-line mr-1"></i>
+                    <h1 class="mb-2"> 1/8 </h1>
+                    <i class="ri-arrow-right-long-line ml-1"></i>
+                </div>
+            </div>
+
+            <div class="crousal flex flex-row gap-4 mt-6 mb-6 ml-6 mr-2 w-full w-[505px] lg:h-[384px] lg:w-[1100px] overflow-x-scroll scroll-smooth [&::-webkit-scrollbar]:hidden">
+                <div class="item-a flex-none flex flex-col bg-white lg:flex-row border border-black rounded-sm w-[280px] h-[500px] lg:w-[638px] lg:h-[378px] transition hover11-bold-br">
+                    <div class="img1 h-[60%] lg:h-[100%] lg:w-[60%] border border-black">
+                        <img class="w-full h-full object-cover" src="imgs/chess.PNG" alt="">
+                    </div>
+            
+                    <div class="text1 bg-white flex flex-col pl-2 pt-2 lg:px-4 lg:py-4 lg:w-[40%]">
+                        <div class="text-info flex flex-col px-4 py-4">
+                            <h1 class="text-black text-2xl">
+                                CNC Discord <br> Membership
+                            </h1>
+                            <p class="override hidden text-sm lg:flex text-gray-400 mt-6">
+                                Chess Not Checkers Community (CnC) Ready to take your wealth-building skills to a whole new level?...
+                            </p>
+                            <a class="text-black-400 text-sm underline mt-8 lg:mt-2" href="tallguytycoon">tallguytycoon</a>
+                        </div>
+                        <div class="crousel-f flex flex-row justify-end mt-auto">
+                            <div class="price flex justify-center items-center w-[60%] border border-black lg:border-t-0 lg:border-r-0 p-2 self-start border-l-transparent border-b-transparent">
+                                <div class="bg-pink-400 p-1 border border-black">
+                                    $97 a month!
+                                </div>
+                            </div>
+                            <div class="rating flex justify-center items-center w-[40%] border border-t-black border-l-transparent border-r-transparent border-b-transparent lg:border-t-transparent flex-row"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                  </svg>
+                                  <h3>4.8(110)</h3>
+                                  
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-a  flex-none flex flex-col bg-white lg:flex-row border border-black rounded-sm w-[280px] h-[500px] lg:w-[638px] lg:h-[378px] transition hover11-bold-br">
+                    <div class="img1 h-[60%] lg:h-[100%] lg:w-[60%] border border-black">
+                        <img class="w-full h-full object-cover" src="imgs\chess2.PNG" alt="">
+                    </div>
+            
+                    <div class="text1 bg-white flex flex-col pl-2 pt-2 lg:px-4 lg:py-4 lg:w-[40%]">
+                        <div class="text-info flex flex-col px-4 py-4">
+                            <h1 class="text-black text-2xl">
+                                CNC Discord <br> Membership
+                            </h1>
+                            <p class="override hidden text-sm lg:flex text-gray-400 mt-6">
+                                Chess Not Checkers Community (CnC) Ready to take your wealth-building skills to a whole new level?...
+                            </p>
+                            <a class="text-black-400 text-sm underline mt-8 lg:mt-2" href="tallguytycoon">tallguytycoon</a>
+                        </div>
+                        <div class="crousel-f flex flex-row justify-end mt-auto">
+                            <div class="price flex justify-center items-center w-[60%] border border-black lg:border-t-0 lg:border-r-0 p-2 self-start border-l-transparent border-b-transparent">
+                                <div class="bg-pink-400 p-1 border border-black">
+                                    $97 a month!
+                                </div>
+                            </div>
+                            <div class="rating flex justify-center items-center w-[40%] border border-t-black border-l-transparent border-r-transparent border-b-transparent lg:border-t-transparent flex-row"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                  </svg>
+                                  <h3>4.8(110)</h3>
+                                  
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-a  flex-none flex flex-col bg-white lg:flex-row border border-black rounded-sm w-[280px] h-[500px] lg:w-[638px] lg:h-[378px] transition hover11-bold-br">
+                    <div class="img1 h-[60%] lg:h-[100%] lg:w-[60%] border border-black">
+                        <img class="w-full h-full object-cover" src="imgs/chess.PNG" alt="">
+                    </div>
+            
+                    <div class="text1 bg-white flex flex-col pl-2 pt-2 lg:px-4 lg:py-4 lg:w-[40%]">
+                        <div class="text-info flex flex-col px-4 py-4">
+                            <h1 class="text-black text-2xl">
+                                CNC Discord <br> Membership
+                            </h1>
+                            <p class="override hidden text-sm lg:flex text-gray-400 mt-6">
+                                Chess Not Checkers Community (CnC) Ready to take your wealth-building skills to a whole new level?...
+                            </p>
+                            <a class="text-black-400 text-sm underline mt-8 lg:mt-2" href="tallguytycoon">tallguytycoon</a>
+                        </div>
+                        <div class="crousel-f flex flex-row justify-end mt-auto">
+                            <div class="price flex justify-center items-center w-[60%] border border-black lg:border-t-0 lg:border-r-0 p-2 self-start border-l-transparent border-b-transparent">
+                                <div class="bg-pink-400 p-1 border border-black">
+                                    $97 a month!
+                                </div>
+                            </div>
+                            <div class="rating flex justify-center items-center w-[40%] border border-t-black border-l-transparent border-r-transparent border-b-transparent lg:border-t-transparent flex-row"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                  </svg>
+                                  <h3>4.8(110)</h3>
+                                  
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-a  flex-none flex flex-col bg-white lg:flex-row border border-black rounded-sm w-[280px] h-[500px] lg:w-[638px] lg:h-[378px] transition hover11-bold-br">
+                    <div class="img1 h-[60%] lg:h-[100%] lg:w-[60%] border border-black">
+                        <img class="w-full h-full object-cover" src="imgs\chess2.PNG" alt="">
+                    </div>
+            
+                    <div class="text1 bg-white flex flex-col pl-2 pt-2 lg:px-4 lg:py-4 lg:w-[40%]">
+                        <div class="text-info flex flex-col px-4 py-4">
+                            <h1 class="text-black text-2xl">
+                                CNC Discord <br> Membership
+                            </h1>
+                            <p class="override hidden text-sm lg:flex text-gray-400 mt-6">
+                                Chess Not Checkers Community (CnC) Ready to take your wealth-building skills to a whole new level?...
+                            </p>
+                            <a class="text-black-400 text-sm underline mt-8 lg:mt-2" href="tallguytycoon">tallguytycoon</a>
+                        </div>
+                        <div class="crousel-f flex flex-row justify-end mt-auto">
+                            <div class="price flex justify-center items-center w-[60%] border border-black lg:border-t-0 lg:border-r-0 p-2 self-start border-l-transparent border-b-transparent">
+                                <div class="bg-pink-400 p-1 border border-black">
+                                    $97 a month!
+                                </div>
+                            </div>
+                            <div class="rating flex justify-center items-center w-[40%] border border-t-black border-l-transparent border-r-transparent border-b-transparent lg:border-t-transparent flex-row"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                  </svg>
+                                  <h3>4.8(110)</h3>
+                                  
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-a  flex-none flex flex-col bg-white lg:flex-row border border-black rounded-sm w-[280px] h-[500px] lg:w-[638px] lg:h-[378px] transition hover11-bold-br">
+                    <div class="img1 h-[60%] lg:h-[100%] lg:w-[60%] border border-black">
+                        <img class="w-full h-full object-cover" src="imgs/chess.PNG" alt="">
+                    </div>
+            
+                    <div class="text1 bg-white flex flex-col pl-2 pt-2 lg:px-4 lg:py-4 lg:w-[40%]">
+                        <div class="text-info flex flex-col px-4 py-4">
+                            <h1 class="text-black text-2xl">
+                                CNC Discord <br> Membership
+                            </h1>
+                            <p class="override hidden text-sm lg:flex text-gray-400 mt-6">
+                                Chess Not Checkers Community (CnC) Ready to take your wealth-building skills to a whole new level?...
+                            </p>
+                            <a class="text-black-400 text-sm underline mt-8 lg:mt-2" href="tallguytycoon">tallguytycoon</a>
+                        </div>
+                        <div class="crousel-f flex flex-row justify-end mt-auto">
+                            <div class="price flex justify-center items-center w-[60%] border border-black lg:border-t-0 lg:border-r-0 p-2 self-start border-l-transparent border-b-transparent">
+                                <div class="bg-pink-400 p-1 border border-black">
+                                    $97 a month!
+                                </div>
+                            </div>
+                            <div class="rating flex justify-center items-center w-[40%] border border-t-black border-l-transparent border-r-transparent border-b-transparent lg:border-t-transparent flex-row"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                  </svg>
+                                  <h3>4.8(110)</h3>
+                                  
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-a  flex-none flex flex-col bg-white lg:flex-row border border-black rounded-sm w-[280px] h-[500px] lg:w-[638px] lg:h-[378px] transition hover11-bold-br">
+                    <div class="img1 h-[60%] lg:h-[100%] lg:w-[60%] border border-black">
+                        <img class="w-full h-full object-cover" src="imgs\chess2.PNG" alt="">
+                    </div>
+            
+                    <div class="text1 bg-white flex flex-col pl-2 pt-2 lg:px-4 lg:py-4 lg:w-[40%]">
+                        <div class="text-info flex flex-col px-4 py-4">
+                            <h1 class="text-black text-2xl">
+                                CNC Discord <br> Membership
+                            </h1>
+                            <p class="override hidden text-sm lg:flex text-gray-400 mt-6">
+                                Chess Not Checkers Community (CnC) Ready to take your wealth-building skills to a whole new level?...
+                            </p>
+                            <a class="text-black-400 text-sm underline mt-8 lg:mt-2" href="tallguytycoon">tallguytycoon</a>
+                        </div>
+                        <div class="crousel-f flex flex-row justify-end mt-auto">
+                            <div class="price flex justify-center items-center w-[60%] border border-black lg:border-t-0 lg:border-r-0 p-2 self-start border-l-transparent border-b-transparent">
+                                <div class="bg-pink-400 p-1 border border-black">
+                                    $97 a month!
+                                </div>
+                            </div>
+                            <div class="rating flex justify-center items-center w-[40%] border border-t-black border-l-transparent border-r-transparent border-b-transparent lg:border-t-transparent flex-row"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                  </svg>
+                                  <h3>4.8(110)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-a  flex-none flex flex-col bg-white lg:flex-row border border-black rounded-sm w-[280px] h-[500px] lg:w-[638px] lg:h-[378px] transition hover11-bold-br">
+                    <div class="img1 h-[60%] lg:h-[100%] lg:w-[60%] border border-black">
+                        <img class="w-full h-full object-cover" src="imgs/chess.PNG" alt="">
+                    </div>
+            
+                    <div class="text1 bg-white flex flex-col pl-2 pt-2 lg:px-4 lg:py-4 lg:w-[40%]">
+                        <div class="text-info flex flex-col px-4 py-4">
+                            <h1 class="text-black text-2xl">
+                                CNC Discord <br> Membership
+                            </h1>
+                            <p class="override hidden text-sm lg:flex text-gray-400 mt-6">
+                                Chess Not Checkers Community (CnC) Ready to take your wealth-building skills to a whole new level?...
+                            </p>
+                            <a class="text-black-400 text-sm underline mt-8 lg:mt-2" href="tallguytycoon">tallguytycoon</a>
+                        </div>
+                        <div class="crousel-f flex flex-row justify-end mt-auto">
+                            <div class="price flex justify-center items-center w-[60%] border border-black lg:border-t-0 lg:border-r-0 p-2 self-start border-l-transparent border-b-transparent">
+                                <div class="bg-pink-400 p-1 border border-black">
+                                    $97 a month!
+                                </div>
+                            </div>
+                            <div class="rating flex justify-center items-center w-[40%] border border-t-black border-l-transparent border-r-transparent border-b-transparent lg:border-t-transparent flex-row"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                  </svg>
+                                  <h3>4.8(110)</h3>
+                                  
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-a  flex-none flex flex-col bg-white lg:flex-row border border-black rounded-sm w-[280px] h-[500px] lg:w-[638px] lg:h-[378px] transition hover11-bold-br">
+                    <div class="img1 h-[60%] lg:h-[100%] lg:w-[60%] border border-black">
+                        <img class="w-full h-full object-cover" src="imgs\chess2.PNG" alt="">
+                    </div>
+            
+                    <div class="text1 bg-white flex flex-col pl-2 pt-2 lg:px-4 lg:py-4 lg:w-[40%]">
+                        <div class="text-info flex flex-col px-4 py-4">
+                            <h1 class="text-black text-2xl">
+                                CNC Discord <br> Membership
+                            </h1>
+                            <p class="override hidden text-sm lg:flex text-gray-400 mt-6">
+                                Chess Not Checkers Community (CnC) Ready to take your wealth-building skills to a whole new level?...
+                            </p>
+                            <a class="text-black-400 text-sm underline mt-8 lg:mt-2" href="tallguytycoon">tallguytycoon</a>
+                        </div>
+                        <div class="crousel-f flex flex-row justify-end mt-auto">
+                            <div class="price flex justify-center items-center w-[60%] border border-black lg:border-t-0 lg:border-r-0 p-2 self-start border-l-transparent border-b-transparent">
+                                <div class="bg-pink-400 p-1 border border-black">
+                                    $97 a month!
+                                </div>
+                            </div>
+                            <div class="rating flex justify-center items-center w-[40%] border border-t-black border-l-transparent border-r-transparent border-b-transparent lg:border-t-transparent flex-row"> 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                  </svg>
+                                  <h3>4.8(110)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--**********wishlist section***********-->
+        <div class="wishlist flex flex-col p-4 mt-4 w-[90%]">
+            <div class="wishlist-heading mt-4 ml-4 mb-4 flex">
+                <h1 class="text-2xl font-medium justify-start ml-2 mb-2">Wishlists you might like</h1>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 p-2 mt-2 mb-4 w-full lg:pl-4 pl-4">
+                
+                <div class="article1 flex bg-white flex-col lg:flex-row border border-black rounded-sm w-full sm:w-[90%] lg:w-[540px] lg:h-[175px] ml-2 hover11-bold-br ">
+                    <div class="pic w-full h-[65%] flex lg:h-[100%] lg:w-[35%] border border-black rounded-sm" >
+                        <img class="w-full h-full object-cover border rounded-sm" src="imgs\imgg1.PNG" alt="">
+                    </div>
+                    <div class="cont flex flex-col flex-grow lg:h-full lg:h-[100%] w-[100%] lg:w-[65%] ">
+                        <div class="flex flex-col p-1 lg:p-4 h-[70%]">
+                            <h1 class="text-black text-2xl">
+                                Free Resources
+                            </h1>
+                            <a class="text-black-400 text-sm underline lg:mt-8 mt-2 ml-1" href="tallguytycoon">guinnlann</a>
+                        </div>
+                        <div class="rates flex flex-row w-full border border-t-black border-l-transparent border-r-transparent border-b-transparent mt-auto lg:mt-auto lg:h-[30%]">
+                            <div class="followers w-[80%] flex items-center border border-r-black border-t-transparent border-l-transparent border-b-transparent p-2 "> 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 ml-4 text-medium">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                </svg>
+                                <h1 class="ml-1 text-black text-medium">831 followers</h1>
+                            </div>
+                            <div class="p-2 w-[20%]">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0 1 20.25 6v12A2.25 2.25 0 0 1 18 20.25H6A2.25 2.25 0 0 1 3.75 18V6A2.25 2.25 0 0 1 6 3.75h1.5m9 0h-9" />
+                                  </svg>
+                                  
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="article1 flex bg-white flex-col lg:flex-row border border-black rounded-sm w-full sm:w-[90%] lg:w-[540px] lg:h-[175px] ml-2 hover11-bold-br">
+                    <div class="pic w-full h-[65%] flex lg:h-[100%] lg:w-[35%] border border-black rounded-sm" >
+                        <img class="w-full h-full object-cover border rounded-sm" src="imgs\imgg2.PNG" alt="">
+                    </div>
+                    <div class="cont flex flex-col flex-grow lg:h-full lg:h-[100%] w-[100%] lg:w-[65%] ">
+                        <div class="flex flex-col p-1 lg:p-4 h-[70%]">
+                            <h1 class="text-black text-2xl">
+                                Free Resources
+                            </h1>
+                            <a class="text-black-400 text-sm underline lg:mt-8 mt-2 ml-1" href="tallguytycoon">guinnlann</a>
+                        </div>
+                        <div class="rates flex flex-row w-full border border-t-black border-l-transparent border-r-transparent border-b-transparent mt-auto lg:mt-auto lg:h-[30%]">
+                            <div class="followers w-[80%] flex items-center border border-r-black border-t-transparent border-l-transparent border-b-transparent p-2 "> 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 ml-4 text-medium">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                </svg>
+                                <h1 class="ml-1 text-black text-medium">831 followers</h1>
+                            </div>
+                            <div class="p-2 w-[20%]">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0 1 20.25 6v12A2.25 2.25 0 0 1 18 20.25H6A2.25 2.25 0 0 1 3.75 18V6A2.25 2.25 0 0 1 6 3.75h1.5m9 0h-9" />
+                                  </svg>
+                                  
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="article1 flex bg-white flex-col lg:flex-row border border-black rounded-sm w-full sm:w-[90%] lg:w-[540px] lg:h-[175px] ml-2 hover11-bold-br">
+                    <div class="pic w-full h-[65%] flex lg:h-[100%] lg:w-[35%] border border-black rounded-sm" >
+                        <img class="w-full h-full object-cover border rounded-sm" src="imgs\imgg1.PNG" alt="">
+                    </div>
+                    <div class="cont flex flex-col flex-grow lg:h-full lg:h-[100%] w-[100%] lg:w-[65%] ">
+                        <div class="flex flex-col p-1 lg:p-4 h-[70%]">
+                            <h1 class="text-black text-2xl">
+                                Free Resources
+                            </h1>
+                            <a class="text-black-400 text-sm underline lg:mt-8 mt-2 ml-1" href="tallguytycoon">guinnlann</a>
+                        </div>
+                        <div class="rates flex flex-row w-full border border-t-black border-l-transparent border-r-transparent border-b-transparent mt-auto lg:mt-auto lg:h-[30%]">
+                            <div class="followers w-[80%] flex items-center border border-r-black border-t-transparent border-l-transparent border-b-transparent p-2 "> 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 ml-4 text-medium">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                </svg>
+                                <h1 class="ml-1 text-black text-medium">831 followers</h1>
+                            </div>
+                            <div class="p-2 w-[20%]">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0 1 20.25 6v12A2.25 2.25 0 0 1 18 20.25H6A2.25 2.25 0 0 1 3.75 18V6A2.25 2.25 0 0 1 6 3.75h1.5m9 0h-9" />
+                                  </svg>
+                                  
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="article1 flex bg-white flex-col lg:flex-row border border-black rounded-sm w-full sm:w-[90%] lg:w-[540px] lg:h-[175px] ml-2 hover11-bold-br ">
+                    <div class="pic w-full h-[65%] flex lg:h-[100%] lg:w-[35%] border border-black rounded-sm" >
+                        <img class="w-full h-full object-cover border rounded-sm" src="imgs\imgg2.PNG" alt="">
+                    </div>
+                    <div class="cont flex flex-col flex-grow lg:h-full lg:h-[100%] w-[100%] lg:w-[65%] ">
+                        <div class="flex flex-col p-1 lg:p-4 h-[70%]">
+                            <h1 class="text-black text-2xl">
+                                Free Resources
+                            </h1>
+                            <a class="text-black-400 text-sm underline lg:mt-8 mt-2 ml-1" href="tallguytycoon">guinnlann</a>
+                        </div>
+                        <div class="rates flex flex-row w-full border border-t-black border-l-transparent border-r-transparent border-b-transparent mt-auto lg:mt-auto lg:h-[30%]">
+                            <div class="followers w-[80%] flex items-center border border-r-black border-t-transparent border-l-transparent border-b-transparent p-2 "> 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 ml-4 text-medium">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                                </svg>
+                                <h1 class="ml-1 text-black text-medium">831 followers</h1>
+                            </div>
+                            <div class="p-2 w-[20%]">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0 1 20.25 6v12A2.25 2.25 0 0 1 18 20.25H6A2.25 2.25 0 0 1 3.75 18V6A2.25 2.25 0 0 1 6 3.75h1.5m9 0h-9" />
+                                  </svg>
+                                  
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--****************ON THE MARKET SECTION**********-->
+
+        <div class="market flex flex-col p-4 mt-4 ml-4 w-[90%]">
+            <div class="headings flex flex-col sm:flex-row justify-between pt-4 px-4 w-full mb-4">
+                <h1 class="text-black text-2xl font-medium mt-2 ml-4">On the market</h1>
+                <div class="flex flex-row items-center mr-4 mt-2">
+                    <a href="" class="flex text-black p-2 px-4 font-medium  hover:bg-white 
+                    hover:border hover:border-black hover:rounded-full 
+                    hover:-translate-y-1 hover:-translate-x-1 transition hover-bold-br">Hot & New</a>
+                    <a href="" class="flex text-black p-2 px-4 font-medium  hover:bg-white 
+                    hover:border hover:border-black hover:rounded-full 
+                    hover:-translate-y-1 hover:-translate-x-1 transition hover-bold-br">Best Sellers</a>
+                    <a href="" class="flex text-black p-2 px-4 font-medium bg-white 
+                    border border-black rounded-full 
+                    hover:-translate-y-1 hover:-translate-x-1 transition hover-bold-br">Trending</a>
+                </div>
+            </div>
+
+            <div class="m-cont flex flex-col lg:flex-row w-full">
+    
+                <div class="list w-full lg:w-[30%] h-auto lg:h-[275px] lg:sticky top-4">
+                    <div class="list-sub bg-white w-full lg:w-[90%] border border-black rounded-sm">
+                        <div class="art1 flex flex-row border-b border-black justify-between p-2 items-center">
+                            <h1 class="text-black p-2 font-medium">Filters</h1>
+                        </div>
+                        <div class="art1 flex flex-row border-b border-black justify-between p-2 items-center">
+                            <h1 class="text-black p-2 font-medium">Tags</h1>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </div>
+                        <div class="art1 flex flex-row border-b border-black justify-between p-2 items-center">
+                            <h1 class="text-black p-2 font-medium">Contains</h1>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </div>
+                        <div class="art1 flex flex-row border-b border-black justify-between p-2 items-center">
+                            <h1 class="text-black p-2 font-medium">Price</h1>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </div>
+                        <div class="art1 flex flex-row border-b border-black justify-between p-2 items-center">
+                            <h1 class="text-black p-2 font-medium">Ratings</h1>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            
+                <!--Pictures Container -->
+                <div class="pics-cont-main w-full lg:w-[70%] px-4 mt-4 lg:mt-0">
+                    <!-- Grid Layout -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full sm:w-[90%] mx-auto">
+                        
+                        <!-- First Card -->
+                        <div class="artt1 flex bg-white flex-col border border-black rounded-sm hover11-bold-br">
+                            <div class="pics-con h-[50%]">
+                                <img class="w-full h-full object-cover border"  src="imgs/beats1.PNG" alt="" class="w-full">
+                            </div>
+                            <div class="cont flex flex-col flex-grow w-full">
+                                <div class="flex flex-col p-1 lg:p-4 h-[50%]">
+                                    <h1 class="text-black text-2xl">Free Resources</h1>
+                                    <a class="text-black-400 text-sm underline lg:mt-8 mt-2 ml-1" href="tallguytycoon">Ramon Arango</a>
+                                    <div class="flex flex-row mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                          </svg>
+                                          <h3>5.0(90)</h3>
+                                          </div>
+                                </div>
+                                <div class="rates flex flex-row w-full border-t border-black mt-auto">
+                                    <div class="bg-pink-400 p-2 mt-1 mb-1 ml-4 border border-black">
+                                        $97 a month!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Second Card -->
+                        <div class="artt1 flex bg-white flex-col border border-black rounded-sm hover11-bold-br">
+                            <div class="pics-con h-[50%]">
+                                <img class="w-full h-full object-cover border"  src="imgs/beats2.PNG" alt="" class="w-full">
+                            </div>
+                            <div class="cont flex flex-col flex-grow w-full">
+                                <div class="flex flex-col p-1 lg:p-4 h-[50%]">
+                                    <h1 class="text-black text-2xl">Exclusive Content</h1>
+                                    <a class="text-black-400 text-sm underline lg:mt-8 mt-2 ml-1" href="#">Ramon Arango</a>
+                                    <div class="flex flex-row mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                          </svg>
+                                          <h3>5.0(90)</h3>
+                                          </div>
+                                </div>
+                                <div class="rates flex flex-row w-full border-t border-black mt-auto">
+                                    <div class="bg-pink-400 p-2 mt-1 mb-1 ml-4 border border-black">
+                                        $97 a month!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Third Card -->
+                        <div class="artt1 flex bg-white flex-col border border-black rounded-sm hover11-bold-br">
+                            <div class="pics-con h-[50%]">
+                                <img class="w-full h-full object-cover border"  src="imgs/beats3.PNG" alt="" class="w-full">
+                            </div>
+                            <div class="cont flex flex-col flex-grow w-full">
+                                <div class="flex flex-col p-1 lg:p-4 h-[50%]">
+                                    <h1 class="text-black text-2xl">Special Offers</h1>
+                                    <a class="text-black-400 text-sm underline lg:mt-8 mt-2 ml-1" href="#">User Name</a>
+                                    <div class="flex flex-row mt-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                      </svg>
+                                      <h3>5.0(90)</h3>
+                                      </div>
+                                </div>
+                                <div class="rates flex flex-row w-full border-t border-black mt-auto">
+                                    <div class="bg-pink-400 p-2 mt-1 mb-1 ml-4 border border-black">
+                                        $97 a month!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="artt1 flex bg-white flex-col border border-black rounded-sm hover11-bold-br">
+                            <div class="pics-con h-[50%]">
+                                <img class="w-full h-full object-cover border"  src="imgs/beats4.PNG" alt="" class="w-full">
+                            </div>
+                            <div class="cont flex flex-col flex-grow w-full">
+                                <div class="flex flex-col p-1 lg:p-4 h-[50%]">
+                                    <h1 class="text-black text-2xl">Exclusive Content</h1>
+                                    <a class="text-black-400 text-sm underline lg:mt-8 mt-2 ml-1" href="#">Ramon Arango</a>
+                                    <div class="flex flex-row mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                          </svg>
+                                          <h3>5.0(90)</h3>
+                                          </div>
+                                </div>
+                                <div class="rates flex flex-row w-full border-t border-black mt-auto">
+                                    <div class="bg-pink-400 p-2 mt-1 mb-1 ml-4 border border-black">
+                                        $97 a month!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="artt1 flex bg-white flex-col border border-black rounded-sm hover11-bold-br">
+                            <div class="pics-con h-[50%]">
+                                <img class="w-full h-full object-cover border"  src="imgs/beats5.PNG" alt="" class="w-full">
+                            </div>
+                            <div class="cont flex flex-col flex-grow w-full">
+                                <div class="flex flex-col p-1 lg:p-4 h-[50%]">
+                                    <h1 class="text-black text-2xl">Exclusive Content</h1>
+                                    <a class="text-black-400 text-sm underline lg:mt-8 mt-2 ml-1" href="#">Ramon Arango</a>
+                                    <div class="flex flex-row mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                          </svg>
+                                          <h3>5.0(90)</h3>
+                                          </div>
+                                </div>
+                                <div class="rates flex flex-row w-full border-t border-black mt-auto">
+                                    <div class="bg-pink-400 p-2 mt-1 mb-1 ml-4 border border-black">
+                                        $97 a month!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="artt1 flex bg-white flex-col border border-black rounded-sm hover11-bold-br">
+                            <div class="pics-con h-[50%]">
+                                <img class="w-full h-full object-cover border"  src="imgs/beats1.PNG" alt="" class="w-full">
+                            </div>
+                            <div class="cont flex flex-col flex-grow w-full">
+                                <div class="flex flex-col p-1 lg:p-4 h-[50%]">
+                                    <h1 class="text-black text-2xl">Exclusive Content</h1>
+                                    <a class="text-black-400 text-sm underline lg:mt-8 mt-2 ml-1" href="#">Ramon Arango</a>
+                                    <div class="flex flex-row mt-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                          </svg>
+                                          <h3>5.0(90)</h3>
+                                          </div>
+                                </div>
+                                <div class="rates flex flex-row w-full border-t border-black mt-auto">
+                                    <div class="bg-pink-400 p-2 mt-1 mb-1 ml-4 border border-black">
+                                        $97 a month!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                
+                    </div>
+                
+                    <!-- Load More Button -->
+                    <div class="loadmore flex justify-center mt-6 mb-4">
+                        <button class="text-black px-4 py-2 border border-black rounded-sm ">Load More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--*****************foooterrr*************-->
+    <div class="flex mt-6 justify-center bg-black py-10">
+    <div class="flex flex-col justify-between gap-8 bg-black py-16 text-white lg:flex-row lg:px-[3vw] lg:py-[24px] w-[96%]">
+        <div class="footer-h flex flex-col w-[100%] lg:w-[50%]">
+            <h1 class="text-3xl lg:text-5xl lg:leading-tight font-medium mb-6">Subscribe to get tips and tactics to grow the way you want.</h1>
+            <div class="w-full flex flex-row items-center top-2 lg:w-[90%]">
+                <div class="flex items-center border border-black px-3 h-[46.4px] w-[94%] bg-white rounded-md lg:relative">
+                    <input type="text" id="search_bar" class="w-full px-2 focus:outline-none text-gray-600" placeholder="Your email address">
+                </div>
+                <button class="menu-btn flex justify-center items-center bg-pink-400 w-[49px] h-[47px] border border-black rounded-sm ml-2">
+                    <i class="ri-arrow-right-long-line ml-1"></i>
+                </button>
+            </div>
+            <div class="copywrite flex flex-row pt-8 pb-6 ml-2 mr-4">
+                <img class="border border-black rounded-full h-[25px] w-[25px]" src="imgs\gmrd.jpeg" alt="">
+                <h1 class="font-medium ml-4">© Gumroad, Inc.</h1>
+            </div>
+        </div>
+
+        <div class="footerlist w-full lg:w-[50%]">
+            <div class="list grid grid-cols-2 gap-x-6 lg:ml-8 ">
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">Taxes</a></li>
+                    <li><a href="#" class="hover:underline">Terms of Service</a></li>
+                    <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                   
+                </ul>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline">Pricing</a></li>
+                    <li><a href="#" class="hover:underline">About</a></li>
+                    <li><a href="#" class="hover:underline">Jobs</a></li>
+                    <li><a href="#" class="hover:underline">Board Meetings</a></li>
+                    <li><a href="#" class="hover:underline">Features</a></li>
+                </ul>
+            </div>
+            <div class="icons flex flex-row gap-6 mt-25 ml-8  flex-end">
+                <i class="ri-twitter-line h-[45px] w-[45px]"></i>
+                <i class="ri-youtube-line h-[45px] w-[45px]"></i>
+                <i class="ri-instagram-line h-[45px] w-[45px]"></i>
+                <i class="ri-facebook-box-fill h-[45px] w-[45px]"></i>
+                <i class="ri-pinterest-fill h-[45px] w-[45px]"></i>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>
